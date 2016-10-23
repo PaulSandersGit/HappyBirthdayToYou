@@ -48,7 +48,7 @@
         
         <h1>Happy 15th Birthday Julian !!!</h1>
         <h2>I love you - Dad</h2>
-        <p id="demo">Click below to light the candles</p>
+        <p>Click on the button to light the candles, then click on the flames to blow them out</p>
         
         <button onclick="lightCandles()">Light the candles</button>        
  
@@ -64,58 +64,58 @@
             <ellipse onclick="clickFlame(2)" class="flame" id="id2" cx="93" cy="48" rx="3" ry="6" visibility="hidden"  />
 
             <rect class="bluecandle"  x="54", y="55" width="6" height="45"  />
-            <ellipse class="flame" id="id3" cx="57" cy="48" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(3)" class="flame" id="id3" cx="57" cy="48" rx="3" ry="6" visibility="hidden"  />
                         
             <rect class="indigocandle"  x="20", y="55" width="6" height="45"  />
-            <ellipse class="flame" id="id4" cx="23" cy="48" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(4)" class="flame" id="id4" cx="23" cy="48" rx="3" ry="6" visibility="hidden"  />
 
             <rect class="indigocandle"  x="160", y="55" width="6" height="45"  />
-            <ellipse class="flame" id="id5" cx="163" cy="48" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(5)" class="flame" id="id5" cx="163" cy="48" rx="3" ry="6" visibility="hidden"  />
             
 
             <rect class="orangecandle"  x="195", y="55" width="6" height="45"  />
-            <ellipse class="flame" id="id6" cx="198" cy="48" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(6)" class="flame" id="id6" cx="198" cy="48" rx="3" ry="6" visibility="hidden"  />
 
 
             <rect class="greencandle"  x="230", y="55" width="6" height="45"  />
-            <ellipse class="flame" id="id7" cx="233" cy="48" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(7)" class="flame" id="id7" cx="233" cy="48" rx="3" ry="6" visibility="hidden"  />
 
             
             
             <rect class="bluecandle"  x="110", y="30" width="6" height="45"  />
-            <ellipse class="flame" id="id8" cx="113" cy="23" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(8)" class="flame" id="id8" cx="113" cy="23" rx="3" ry="6" visibility="hidden"  />
 
             <rect class="orangecandle"  x="75", y="36" width="6" height="45"  />
-            <ellipse class="flame" id="id9" cx="78" cy="29" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(9)" class="flame" id="id9" cx="78" cy="29" rx="3" ry="6" visibility="hidden"  />
             
             <rect class="indigocandle"  x="140", y="30" width="6" height="45"  />
-            <ellipse class="flame" id="id10" cx="143" cy="23" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(10)" class="flame" id="id10" cx="143" cy="23" rx="3" ry="6" visibility="hidden"  />
 
             <rect class="redcandle"  x="175", y="36" width="6" height="45"  />
-            <ellipse class="flame" id="id11" cx="178" cy="29" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(11)" class="flame" id="id11" cx="178" cy="29" rx="3" ry="6" visibility="hidden"  />
 
             
             <rect class="indigocandle"  x="210", y="72" width="6" height="45"  />
-            <ellipse class="flame" id="id12" cx="213" cy="65" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(12)"  class="flame" id="id12" cx="213" cy="65" rx="3" ry="6" visibility="hidden"  />
 
                             
             <rect class="redcandle"  x="40", y="72" width="6" height="45"  />
-            <ellipse class="flame" id="id13" cx="43" cy="65" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(13)" class="flame" id="id13" cx="43" cy="65" rx="3" ry="6" visibility="hidden"  />
 
                             
             <rect class="orangecandle"  x="100", y="82" width="6" height="45"  />
-            <ellipse class="flame" id="id14" cx="103" cy="75" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(14)" class="flame" id="id14" cx="103" cy="75" rx="3" ry="6" visibility="hidden"  />
 
                             
             <rect class="greencandle"  x="150", y="82" width="6" height="45"  />
-            <ellipse class="flame" id="id15" cx="153" cy="75" rx="3" ry="6" visibility="hidden"  />
+            <ellipse onclick="clickFlame(15)" class="flame" id="id15" cx="153" cy="75" rx="3" ry="6" visibility="hidden"  />
             
             
 </svg>
         
                 
-        
 
+<h2 id="makeawish" visibility="hidden"></h2>
 
 
 
@@ -133,6 +133,7 @@ function lightCandles() {
     for (i = 1; i <= numberofcandles; i++) {
         document.getElementById(idprefix.concat(i)).setAttribute("visibility","visible");
     }
+    document.getElementById("makeawish").innerHTML = ""
 }
 
     
@@ -141,6 +142,16 @@ function clickFlame(i) {
     var numberofcandles = 15;
     document.getElementById(idprefix.concat(i)).setAttribute("visibility","hidden");
 
+    var numberlit = 0
+    var i;
+    for (i = 1; i <= numberofcandles; i++) {
+        if (document.getElementById(idprefix.concat(i)).getAttribute("visibility") == "visible") { 
+            numberlit=numberlit+1};
+    }
+    if (numberlit == 0 ) {
+        document.getElementById("makeawish").innerHTML = "Make a wish!!!"
+    }
+    
 }
 
     

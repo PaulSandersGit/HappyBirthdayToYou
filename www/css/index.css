@@ -118,8 +118,10 @@ ellipse.flame {
     fill:gold;
     stroke-width:2;
     stroke:gold; 
+    /*
     animation:fade 2000ms infinite;
-    -webkit-animation:fade 2000ms infinite        
+    -webkit-animation:fade 2000ms infinite  
+    */
 }
 
 rect.redcandle {
