@@ -44,50 +44,111 @@
 
 <body>
     <div class="app">
-<h1>Julian is a total dumbo</h1>
-<h1>Justin, however, is a bit of a .....</h1>
+        <img src="appimages\balloons.jpg" alt="Balloons" style="width:285px;height:130px;">
         
+        <h1>Happy 15th Birthday Julian !!!</h1>
+        <h2>I love you - Dad</h2>
+        <p id="demo">Click below to light the candles</p>
+        
+        <button onclick="lightCandles()">Light the candles</button>        
  
-        <svg width="100" height="200">
-  <circle cx="20" cy="50" r="10" stroke="blue" stroke-width="0" fill="brown" />
-<circle cx="60" cy="50" r="10" stroke="blue" stroke-width="0" fill="brown" />
-<circle cx="40" cy="100" r="10" stroke="blue" stroke-width="0" fill="brown" />
+        <svg width="250" height="220">
+              <ellipse cx="125" cy="180" rx="120" ry="30" style="fill:chocolate;stroke:chocolate;stroke-width:2" />
+              <rect x="5", y="100", width="240" height="80" style="fill:chocolate;stroke-width:2;stroke:chocolate" />
+              <ellipse  cx="125" cy="100" rx="120" ry="30" style="fill:sienna;stroke:sienna;stroke-width:2" />
+        
+            <rect class="redcandle"  x="125", y="55" width="6" height="45"  />
+            <ellipse onclick="clickFlame(1)" class="flame" id="id1" cx="128" cy="48" rx="3" ry="6" visibility="hidden"  />
             
-<rect x="30" y="40" width="20" height="60"  fill="brown" />
+            <rect class="greencandle"  x="90", y="55" width="6" height="45"  />
+            <ellipse onclick="clickFlame(2)" class="flame" id="id2" cx="93" cy="48" rx="3" ry="6" visibility="hidden"  />
+
+            <rect class="bluecandle"  x="54", y="55" width="6" height="45"  />
+            <ellipse class="flame" id="id3" cx="57" cy="48" rx="3" ry="6" visibility="hidden"  />
+                        
+            <rect class="indigocandle"  x="20", y="55" width="6" height="45"  />
+            <ellipse class="flame" id="id4" cx="23" cy="48" rx="3" ry="6" visibility="hidden"  />
+
+            <rect class="indigocandle"  x="160", y="55" width="6" height="45"  />
+            <ellipse class="flame" id="id5" cx="163" cy="48" rx="3" ry="6" visibility="hidden"  />
+            
+
+            <rect class="orangecandle"  x="195", y="55" width="6" height="45"  />
+            <ellipse class="flame" id="id6" cx="198" cy="48" rx="3" ry="6" visibility="hidden"  />
+
+
+            <rect class="greencandle"  x="230", y="55" width="6" height="45"  />
+            <ellipse class="flame" id="id7" cx="233" cy="48" rx="3" ry="6" visibility="hidden"  />
+
+            
+            
+            <rect class="bluecandle"  x="110", y="30" width="6" height="45"  />
+            <ellipse class="flame" id="id8" cx="113" cy="23" rx="3" ry="6" visibility="hidden"  />
+
+            <rect class="orangecandle"  x="75", y="36" width="6" height="45"  />
+            <ellipse class="flame" id="id9" cx="78" cy="29" rx="3" ry="6" visibility="hidden"  />
+            
+            <rect class="indigocandle"  x="140", y="30" width="6" height="45"  />
+            <ellipse class="flame" id="id10" cx="143" cy="23" rx="3" ry="6" visibility="hidden"  />
+
+            <rect class="redcandle"  x="175", y="36" width="6" height="45"  />
+            <ellipse class="flame" id="id11" cx="178" cy="29" rx="3" ry="6" visibility="hidden"  />
+
+            
+            <rect class="indigocandle"  x="210", y="72" width="6" height="45"  />
+            <ellipse class="flame" id="id12" cx="213" cy="65" rx="3" ry="6" visibility="hidden"  />
+
+                            
+            <rect class="redcandle"  x="40", y="72" width="6" height="45"  />
+            <ellipse class="flame" id="id13" cx="43" cy="65" rx="3" ry="6" visibility="hidden"  />
+
+                            
+            <rect class="orangecandle"  x="100", y="82" width="6" height="45"  />
+            <ellipse class="flame" id="id14" cx="103" cy="75" rx="3" ry="6" visibility="hidden"  />
+
+                            
+            <rect class="greencandle"  x="150", y="82" width="6" height="45"  />
+            <ellipse class="flame" id="id15" cx="153" cy="75" rx="3" ry="6" visibility="hidden"  />
+            
             
 </svg>
         
+                
         
-        
-        
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
 
 
-<button onclick="myFunction()">Click me</button>
 
-<p id="demo"></p>
 
-<button touchstart="myFunction2()">Touch me please</button>
+
 
 
 
         
 
 <script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Button was definitely definitely clicked";
+function lightCandles() {
+    var idprefix = "id";
+    var numberofcandles = 15;
+    var i;
+    for (i = 1; i <= numberofcandles; i++) {
+        document.getElementById(idprefix.concat(i)).setAttribute("visibility","visible");
+    }
 }
+
+    
+function clickFlame(i) {
+    var idprefix = "id";
+    var numberofcandles = 15;
+    document.getElementById(idprefix.concat(i)).setAttribute("visibility","hidden");
+
+}
+
+    
+    
 </script>
 
         
-<script>
-function myFunction2() {
-    document.getElementById("demo").innerHTML = "Button was touched";
-}
-</script>
+
 
         
     
